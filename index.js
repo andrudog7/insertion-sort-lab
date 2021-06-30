@@ -1,16 +1,20 @@
 function findMinAndRemove(array){
     let min = array[0]
-    for (let i = 0;i<array.length - 1;i++) {
+    let minIndex = 0
+    for (let i = 0;i<array.length;i++) {
         if (array[i] < min) {
             min = array[i]
-            array.splice(i, 1)
+            minIndex = i
         }
     }
+    array.splice(minIndex, 1)
     return min
 }
 
 function selectionSort(array){
     let finalArray = []
-    finalArray.push(findMinAndRemove(array))
+    while (array.length > 0) {
+      finalArray.push(findMinAndRemove(array))
+    }
     return finalArray
 }
