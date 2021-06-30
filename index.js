@@ -3,12 +3,14 @@ function findMinAndRemove(array){
     for (let i = 0;i<array.length - 1;i++) {
         if (array[i] < min) {
             min = array[i]
-            console.log(min)
+            array.splice(i, 1)
         }
     }
     return min
 }
 
 function selectionSort(array){
-
+    let finalArray = []
+    finalArray.push(findMinAndRemove(array))
+    return finalArray
 }
